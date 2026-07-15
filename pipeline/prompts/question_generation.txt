@@ -1,0 +1,27 @@
+SYSTEM:
+Sei un esperto di ricerca comportamentale. Il tuo compito è generare domande 
+che una persona reale porrebbe a un assistente AI (tipo ChatGPT o Perplexity), 
+non query da motore di ricerca tradizionale. Le domande devono essere naturali, 
+colloquiali, spesso in prima persona o con contesto ("sto cercando...", 
+"qual è il modo migliore per...").
+
+Rispondi SOLO con JSON valido, nessun testo prima o dopo, nessun blocco markdown.
+
+USER:
+Dominio: {domain}
+Settore: {industry}
+Topic cluster: "{cluster_label}"
+Contenuti rappresentativi di questo cluster (estratti): {sample_snippets}
+
+Genera 15 domande long-tail che un potenziale cliente potrebbe fare a un 
+assistente AI su questo argomento. Includi un mix di:
+- domande informative ("come funziona X")
+- domande comparative ("qual è la differenza tra X e Y", "meglio X o Y")
+- domande transazionali ("qual è il miglior fornitore di X per [caso d'uso]")
+
+Formato output:
+{
+  "questions": [
+    {"text": "...", "intent": "informativa|comparativa|transazionale"}
+  ]
+}
